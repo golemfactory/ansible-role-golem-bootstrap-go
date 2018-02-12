@@ -1,0 +1,50 @@
+---
+# tasks file for golem-bootstrap-go
+
+- name: install deps
+  become: yes
+  with_items:
+    - libssl1.0.0
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+
+- name: create group
+  become: yes
+  group:
+    name: "{{ golem_bootstrap_go_user_group }}"
+    system: yes
+    state: present
+
+- name: create user
+  become: yes
+  user:
+    name: "{{ golem_bootstrap_go_user }}"
+    home: "{{ golem_bootstrap_go_user_home }}"
+    system: yes
+    group: "{{ golem_bootstrap_go_user_group }}"
+    state: present
+
+- name: install binary
+  become: yes
+  get_url:
+    url: "{{ golem_bootstrap_go_url }}"
+    dest: "{{ golem_bootstrap_go_bin_path }}"
+    mode: 0755
+  notify: restart golem bootstrap go
+
+- name: create service file
+  become: yes
+  template:
+    src: golem_bootstrap_go.service.j2
+    dest: "/etc/systemd/system/{{ golem_bootstrap_go_unit_name }}.service"
+  notify: restart golem bootstrap go
+
+- name: start
+  become: yes
+  systemd:
+    daemon_reload: yes
+    name: "{{ golem_bootstrap_go_unit_name }}"
+    state: started
+    enabled: yes

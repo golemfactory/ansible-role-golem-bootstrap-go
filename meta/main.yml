@@ -1,0 +1,18 @@
+galaxy_info:
+  author: Karol Tomala
+  description: Golem Bootstrap Go
+  company: Golem Factory GmbH
+  license: BSD
+  min_ansible_version: 2.4
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - 16.04
+
+  galaxy_tags:
+    - golem
+    - golem_bootstrap_go
+    - golem-bootstrap-go
+    - bootstrap_go
+    - bootstrap-go
