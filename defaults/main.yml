@@ -10,5 +10,5 @@ golem_bootstrap_go_url: "https://github.com/golemfactory/bootstrap_go/releases/d
 golem_bootstrap_go_user: golem
 golem_bootstrap_go_user_group: golem
 golem_bootstrap_go_user_home: "/var/lib/{{ golem_bootstrap_go_user }}"
-golem_bootstrap_go_version: "0.15.0"
+golem_bootstrap_go_version: "0.15.0a"
 golem_bootstrap_go_unit_extra_vars: ""
