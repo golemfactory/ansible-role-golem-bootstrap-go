@@ -4,7 +4,6 @@
 golem_bootstrap_go_bin_path: "/usr/local/bin/golem-bootstrap-go-{{ golem_bootstrap_go_version }}"
 golem_bootstrap_go_name: "{{ inventory_hostname }} bootstrap go"
 golem_bootstrap_go_port: 40102
-golem_bootstrap_go_reinstall: False
 golem_bootstrap_go_unit_name: golem_bootstrap_go
 golem_bootstrap_go_url: "https://github.com/golemfactory/bootstrap_go/releases/download/{{ golem_bootstrap_go_version }}/bootstrap_linux_amd64"
 golem_bootstrap_go_user: golem
