@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=simple
 User=golem
-ExecStart={{ golem_bootstrap_go_bin_path }} --port={{ golem_bootstrap_go_port }} --name="{{ golem_bootstrap_go_name }}" {{ golem_bootstrap_go_unit_extra_vars }}
+ExecStart={{ golem_bootstrap_go_bin_path }} --port={{ golem_bootstrap_go_port }} --name="{{ golem_bootstrap_go_name }}" --mainnet {{ golem_bootstrap_go_unit_extra_vars }}
 LimitNOFILE=65536
 Restart=on-failure
 RestartSec=3
