@@ -3,10 +3,9 @@
 
 - name: install deps
   become: yes
-  with_items:
-    - libssl1.0.0
   apt:
-    name: "{{ item }}"
+    name:
+      - libssl1.0.0
     state: present
     update_cache: yes
 
